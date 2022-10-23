@@ -8,12 +8,33 @@
 		<title>Heart Disease Test</title>
 	</head>
 	<body>
+		<style>
+		
+		#body{
+
+		}
+		#button::focus {
+}
+		#full-window {
+			position: absolute;
+			z-index: 999;
+			height: 0%;
+			width: 100%;
+			background-color: red;
+			transition: .5s ease-in-out;
+			overflow: hidden;
+			text-align: center;
+		}
+	</style>
 	<!-- Java Script -->	
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-		
+		<script>
+			function test() {
+				document.querySelector("#full-window").style.height = '100%';
+			}
+			</script>
 		<!-- Navbar-->
         <div class = "section">
 		<nav class="navbar navbar-dark" style = "background-color:#F1F0F0">
@@ -46,7 +67,7 @@
         </div>
     </div>
 
-		<div class="section pl-5 pb-3" style = "background-color: #F1F0F0;" id = "section2">
+		<div id = "body" class="section pl-5 pb-3 pr-5" style = "background-color: #F1F0F0;" id = "section2">
 			<br>
 			<!--Form-->
 			<form action = "{{url_for('predict')}}" method ="POST" >
@@ -138,10 +159,13 @@
 						  </div>
 
 					  </div>
-					  <br>
-					  <div class="form-group">
-						<input class="btn btn-danger" type="submit" value="Predict!">
-					  </div>
+					<div class="form-group text-center"></div>
+					
+					<button class="btn btn-danger text-center" type="submit" value="Predict!" onclick="test();">Predict!</button>
+					<div id="full-window">
+						<h1 style="padding: 25%;">You should definitely get checked! 🥺</h1>
+					</div>
+				</div>
 					  
 					  <!--Prediction Result-->
 					  <div id ="result">
@@ -176,34 +200,46 @@
         </div>
 
         <div class = "section pl-5" style = "background-color: #FCF4EA;"id = "section4">
-            <h2 class = "text-center" style = "color: #FA6559;">About Us</h2>
-            <div class = "row justify-content-center">
+            <h2 class = "text-center" style = "color: #FA6559;">Meet the Devious Designers</h2>
+            <div class = "row justify-content-center" style = "margin-top: 35px;">
             <div class = "col-sm-2">
                 <a href = "https://www.linkedin.com/in/maliknaik/">
-                <img class = "img-fluid " src="/images/M.png" width="255"  alt="Mary"/>
+                <div>
+					<h4 class = "text-center" style = "color: #FA6559;">Full Stack Developer</h4>
+				</div>
             </a>
-                <p class = "text-md-center text-black">Malik Naik</p>
+                <p class = "text-md-center text-black font-weight-bold">Malik Naik</p>
             </div>
             <div class = "col-sm-2">
                 <a href = "https://www.linkedin.com/in/minhvo2601/">
-                <img class = "img-fluid" src="/images/M.png" width="255" alt="Sana"/>
+					<div>
+						<h4 class = "text-center" style = "color: #FA6559;">Data Analyst</h4>
+					</div>
             </a>
-                <p class = "text-md-center text-black">Megan Vo</p>                
+                <p class = "text-md-center text-black font-weight-bold">Megan Vo</p>                
             </div>
             <div class = "col-sm-2">
                 <a href = "https://www.linkedin.com/in/zainab-mohammed-3b41a021b/">
-                <img class = "img-fluid " src="/images/Z.png" width="255" alt="Megan"/>
+					<div>
+						<h4 class = "text-center" style = "color: #FA6559;">UI/UX Designer</h4>
+					</div>
             </a>
-                <p class = "text-md-center text-black">Zainab Mohammed</p>
+                <p class = "text-md-center text-black font-weight-bold">Zainab Mohammed</p>
             </div>
 			<div class = "col-sm-2">
                 <a href = "https://www.linkedin.com/in/sanarashid18/">
-                <img class = "img-fluid " src="/images/S.png" width="255" alt="Megan"/>
+					<div>
+						<h4 class = "text-center" style = "color: #FA6559;">Frontend Devloper</h4>
+					</div>
             </a>
-                <p class = "text-md-center text-black">Sana Rashid</p>
+                <p class = "text-md-center text-black font-weight-bold">Sana Rashid</p>
             </div>
         </div>
         </div>
 		
 	</body>
 </html>
+
+
+
+
